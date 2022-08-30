@@ -1,10 +1,13 @@
 const express = require ("express");
 const app = express();
-const path = require("path")
+const path = require("path");
+
+const publicPath = path.resolve (__dirname, './Public');
+app.use(express.static(publicPath));
 
 app.listen (3030, () =>{
     console.log ("Servidor exitoso")
-})
+});
 
 app.get ('/', (req, res) =>{
     let home = path.join(__dirname, './DH-Heroes/Views/index.html')
@@ -45,3 +48,4 @@ app.get ('/turing', (req, res) =>{
     let turing = path.join(__dirname, './DH-Heroes/Views/turing.html')
      res.sendFile (turing)
 })
+
