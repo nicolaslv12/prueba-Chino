@@ -49,5 +49,3 @@ app.get ('/turing', (req, res) =>{
      res.sendFile (turing)
 })
 
-hola
-
